@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div id="game-background">
+      <img id="bird" src="img/bird.png" alt="" />
+
+      <div class="obstacle">
+        <div class="upper-part"></div>
+        <div class="bottom-part"></div>
+      </div>
+      <div class="obstacle">
+        <div class="upper-part"></div>
+        <div class="bottom-part"></div>
+      </div>
+      <div class="obstacle">
+        <div class="upper-part"></div>
+        <div class="bottom-part"></div>
+      </div>
+
+      <div id="score">0</div>
+      <div id="result">
+        <h1 class="gameover">Game Over</h1>
+        <button class="restart">Restart</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="flappy_bird.js"></script>
+    <script type="text/javascript">
+      var game = new Game();
+    </script>
+  </body>
+</html>
