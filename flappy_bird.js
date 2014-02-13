@@ -176,18 +176,22 @@ Game.prototype = {
           self.bird.fly();
           break;
         case 13:
-          self.start();
+          if (self.running) {
+            self.start();
+          } else {
+            self.restart();
+          }
           break;
       }
     });
 
-    $(window).click(function (e) {
-      if (self.running) {
-        self.bird.fly();
-      } else {
-        self.start();
-      }
-    });
+    //$(window).click(function (e) {
+    //  if (self.running) {
+    //    self.bird.fly();
+    //  } else {
+    //    self.start();
+    //  }
+    //});
   },
 
   bindListeners: function () {
@@ -212,14 +216,7 @@ Game.prototype = {
   bindEvents: function () {
     var self = this;
     this.$result.find('.restart').click(function () {
-      self.bird.init();
-      self.obstacles.init();
-
-      self.$result.fadeOut();
-
-      self.score = 0;
-      self.start();
-
+      self.restart();
       return false;
     })
   },
@@ -247,5 +244,16 @@ Game.prototype = {
     this.$score.html(this.score).fadeIn();
     this.iterId = setInterval(run, 1);
     this.running = true;
+  },
+
+  restart: function () {
+    this.bird.init();
+    this.obstacles.init();
+    this.collisionCondition = null;
+
+    this.$result.fadeOut();
+
+    this.score = 0;
+    this.start();
   }
 }
