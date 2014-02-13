@@ -1,4 +1,10 @@
+@font-face {
+  font-family: agentorange;
+  src: url('./AGENTORANGE.TTF');
+}
+
 body {
+  font-family: agentorange;
   background: #eee;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   overflow: hidden;
@@ -29,16 +35,18 @@ body {
 }
 
 #result .gameover {
+  text-align: center;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 #result .restart {
+  font-family: agentorange;
   display: block;
   margin: auto;
-  border: solid 3px black;
-  border-radius: 5px;
-  font-size: 2em;
+  border: none;
+  background: transparent;
+  font-size: 1em;
 }
 
 #score {

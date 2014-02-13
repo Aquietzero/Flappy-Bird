@@ -1,9 +1,9 @@
-window.G = 3.8;
+window.G = 3.5;
 window.T = 10;
 
 var OBSTACLE_DISTANCE = 250;
 var BIRD_SPEED = 2.5;
-var OBSTACLE_SPEED = 1.0;
+var OBSTACLE_SPEED = 0.8;
 
 function Bird() {
   this.$el = $('#bird');
