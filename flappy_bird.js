@@ -209,7 +209,9 @@ Game.prototype = {
   bindEvents: function () {
     var self = this;
     this.$result.find('.restart').click(function () {
-      self.restart();
+      if (!self.running) {
+        self.restart();
+      }
       return false;
     })
   },
